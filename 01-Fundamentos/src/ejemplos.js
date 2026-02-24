@@ -226,3 +226,4 @@ console.log(`Ingreso: ${report.ingreso}`);
 console.log(`Gasto: ${report.gasto}`);
 console.log(`Balance: ${report.balance}`);
 console.groupEnd(); // Finaliza el grupo en la consola
+
