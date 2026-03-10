@@ -53,3 +53,70 @@ const productosfilter = [
 ]
 const productosconPrecioMayor = productosfilter.filter(producto => producto.precio > 20000);
 console.log(productosconPrecioMayor);
+
+//4. Filtrar palabras que contengan la letra "a"
+const palabrasfilter =  ["manzana", "pera", "durazno", "papaya", "uva", "kiwi", "lulo"];
+const palabrasConA = palabrasfilter.filter(palabra => palabra.includes("a"));
+console.log(palabrasConA);
+
+//5. Filtrar usuarios con ids que contengan 10
+const usuariosfilter2 = [
+    {id: 102, nombre: "David", edad: 18},
+    {id: 104, nombre: "Laura", edad: 17},
+    {id: 204, nombre: "Valentina", edad:17},
+    {id: 103, nombre: "Daniel", edad: 17},
+    {id: 203, nombre: "Paula", edad: 17}
+]
+const UsuariosconID10 = usuariosfilter2.filter(usuarios => usuarios.id.toString().includes("10"));
+console.log(UsuariosconID10)
+
+//Ejemplos de Reduce
+
+//1. Calcular la suma de una lista de numeros
+const numerosreduce = [1, 2, 3, 4, 5];
+const Suma = numerosreduce.reduce((acumulador, numero) => acumulador + numero, 0);
+console.log(Suma);
+
+//2. Encontar el numero mayor
+const numerosreduce2 = [8, 9, 4, 3, 10, 7, 11];
+const numeroMayor2 = numerosreduce2.reduce((mayor , numero ) => numero > mayor ? numero : mayor, numerosreduce2[0]);
+console.log(numeroMayor2);
+
+//3. Contar la cantidad de veces que aparece una palabra en una lista
+const palabrasreduce = ["manzana", "pera", "durazno", "papaya", "uva", "kiwi", "lulo", "manzana", "pera"];
+const conteoPalabras = palabrasreduce.reduce((conteo, palabra) => {
+    conteo[palabra] = (conteo[palabra] || 0) + 1;
+    return conteo;
+}, {});
+console.log(conteoPalabras);
+
+//4. Calcular el promedio de una lista de numeros
+const numerosreduce3 = [10, 20, 30, 40, 50];  
+const promedio = numerosreduce3.reduce((acumulador, numero, index, array) => {
+    acumulador += numero;
+    if (index === array.length - 1) {
+        return acumulador / array.length; // Devuelve el promedio en la última iteración
+    }
+    return acumulador; // Devuelve la suma acumulada en las iteraciones anteriores
+}, 0);
+console.log(promedio);
+
+//5. Agrupar objetos por una propiedad
+const usuariosreduce = [
+    { id: 1, nombre: "Ana", edad: 25 },
+    { id: 2, nombre: "Luis", edad: 30 },
+    { id: 3, nombre: "María", edad: 22 },
+    { id: 4, nombre: "Carlos", edad: 30 },
+    { id: 5, nombre: "Sofía", edad: 25 },
+];
+const usuariosAgrupados = usuariosreduce.reduce((agrupados, usuario) => {
+    const edad = usuario.edad; 
+    if (!agrupados[edad]) {
+        agrupados[edad] = []; // Si no existe el grupo para esa edad, lo crea
+    } 
+    agrupados[edad].push(usuario); // Agrega el usuario al grupo correspondiente
+    return agrupados;
+}, {}); 
+console.log(usuariosAgrupados);
+
+
