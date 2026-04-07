@@ -1,23 +1,29 @@
+// 1.Ejercicio 
 const numeros = [2, 4, 6, 8, 10];
 const multiplicaentre2 = numeros.map(numero => numero * 2);
 console.log (multiplicaentre2);
 
+// 2. Ejercicio
 const nombres = ["ana", "luis", "marta", "pedro"];
 const nombresMayusculas = nombres.map(nombre => nombre.toUpperCase());
 console.log(nombresMayusculas);
 
+// 3. Ejercicio
 const palabras = ["sol", "computador", "mesa", "javascript"];
 const longitudpalabras = palabras.map(palabras => palabras.length);
 console.log (longitudpalabras);
 
+// 4. Ejercicio
 const numeros2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const numerospares = numeros2.filter(numero => numero % 2 === 0);
 console.log(numerospares);
 
+// 5. Ejercicio
 const palabras2 = ["casa", "ventana", "sol", "computadora", "luz"];
 const palabrasconmasde5letras = palabras2.filter(palabras => palabras.length > 5);
 console.log(palabrasconmasde5letras);
 
+// 6. Ejercicio
 const estudiantes = [
     {nombre: "Ana", nota: 4.5},
     {nombre: "Luis", nota: 2.8},
@@ -27,30 +33,36 @@ const estudiantes = [
 const estudiantesaprobados = estudiantes.filter(estudiante => estudiante.nota >= 3.0);
 console.log(estudiantesaprobados);
 
+// 7. Ejercicio
 const numeros3 = [5, 10, 15, 20];
 const sumatotal = numeros3.reduce((acumulador, numero) => acumulador + numero, 0);
 console.log(sumatotal);
 
-
+// 8. Ejercicio
 const numeros4 = [2, 3, 4];
 const resultadototal = numeros4.reduce((acumulador, numero) => acumulador * numero, 1);
 console.log(resultadototal);
 
+// 9. Ejercicio
 const palabras3 = ["hola", "mundo", "js"];
 const contartotalletras = palabras3.reduce((acumulador, palabra) => acumulador + palabra.length, 0);
 console.log(contartotalletras);
 
+// 10. Ejercicio
 const numeros5 = [45, 12, 78, 3, 19, 1];
 const numerosmenoramayor = numeros5.sort((a, b) => a - b);
 console.log(numerosmenoramayor);
 
+// 11. Ejercicio
 const numerosmayoraamenor = numeros5.sort((a, b) => b - a);
 console.log(numerosmayoraamenor);
 
+// 12. Ejercicio
 const palabras4 = ["Pedro", "Ana", "Luis", "Carlos", "Marta"];
 const palabrasordenadas = palabras4.sort();
 console.log(palabrasordenadas);
 
+// 13. Ejercicio
 const productos = [
     {nombre: "Teclado", precio: 120000},
     {nombre: "Mouse", precio: 50000},
@@ -60,6 +72,36 @@ const productos = [
 const masbaratosamascaros = productos.sort((a, b) => a.precio - b.precio);
 console.log(masbaratosamascaros);
 
+// 14. Ejercicio
+// Pedir número al usuario
+let numero = parseInt(prompt("Ingresa un número del 1 al 7:"));
+
+// Usar switch para mostrar el día
+switch (numero) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    case 3:
+        console.log("Miércoles");
+        break;
+    case 4:
+        console.log("Jueves");
+        break;
+    case 5:
+        console.log("Viernes");
+        break;
+    case 6:
+        console.log("Sábado");
+        break;
+    case 7:
+        console.log("Domingo");
+        break;
+    default:
+        console.log("Día no válido");
+}
 // 15. Clasificación de color con switch
 const color = prompt("Ingrese un color (rojo, verde, amarillo):").toLowerCase();
 switch (color) {
@@ -94,12 +136,12 @@ console.log("¡Despegue!");
 
 // 18. Sumar números hasta llegar a 100 con while
 let suma = 0;
-let numero = 1;
+let numero18 = 1;
 let cantidadNumeros = 0;
 while (suma < 100) {
-    console.log(`Sumando: ${numero}`);
-    suma += numero;
-    numero++;
+    console.log(`Sumando: ${numero18}`);
+    suma += numero18;
+    numero18++;
     cantidadNumeros++;
 }
 console.log(`Suma final: ${suma}`);
@@ -129,40 +171,3 @@ console.log(frasesVentas);
 
 const totalVentas = ventasFiltradas.reduce((acc, v) => acc + v.cantidad * v.precio, 0);
 console.log(`Total ventas: ${totalVentas}`);
-
-const input = prompt(
-    "Ingrese un número del 1 al 7 (1=Lunes, 2=Martes, 3=Miércoles, 4=Jueves, 5=Viernes, 6=Sábado, 7=Domingo):"
-);
-const numero6 = parseInt(input, 10);
-
-if (Number.isNaN(numero6)) {
-    console.log("Número inválido");
-} else {
-    switch (numero6) {
-        case 1:
-            console.log("Lunes");
-            break;
-        case 2:
-            console.log("Martes");
-            break;
-        case 3:
-            console.log("Miércoles");
-            break;
-        case 4:
-            console.log("Jueves");
-            break;
-        case 5:
-            console.log("Viernes");
-            break;
-        case 6:
-            console.log("Sábado");
-            break;
-        case 7:
-            console.log("Domingo");
-            break;
-        default:
-            console.log("Número inválido");
-    }
-}
-
-
